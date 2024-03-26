@@ -7,13 +7,14 @@ import { selectContacts } from '../../redux/contactsSlice';
 export default function ContactList() {
     const contacts = useSelector(selectContacts);
     const filter = useSelector(selectNameFilter);
-    const visibleContacts = contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
+    // console.log(contacts);
+    // const visibleContacts = contacts.filter(contact =>
+    //     contact.name.toLowerCase().includes(filter.toLowerCase())
+    // );
 
     return (
         <ul className={list}>
-            {visibleContacts.map(list => (
+            {contacts.map(list => (
                 <Contact list={list} key={list.id} />
             ))}
         </ul>
