@@ -20,8 +20,8 @@ export default function ContactForm() {
     const numberId = useId();
     const dispatch = useDispatch();
 
-    const handleSubmit = ({ name, number }, actions) => {
-        dispatch(addContact(name, number));
+    const handleSubmit = (newContact, actions) => {
+        dispatch(addContact(newContact));
         actions.resetForm();
     };
 
